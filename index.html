@@ -236,7 +236,7 @@
     .whatsapp-float,.back-top{position:fixed;z-index:900;bottom:24px;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;box-shadow:0 15px 36px rgba(0,0,0,.22);transition:.25s ease}
     .whatsapp-float{left:24px;background:#25d366;color:#fff}
     .whatsapp-float:hover{transform:translateY(-4px) scale(1.03)}
-    .back-top{right:24px;border:0;background:var(--navy);color:#fff;opacity:0;pointer-events:none;transform:translateY(14px)}
+    .back-top{display:none!important}
     .back-top.show{opacity:1;pointer-events:auto;transform:none}
     .back-top:hover{background:var(--beige);color:var(--navy)}
 
@@ -328,6 +328,179 @@
       html{scroll-behavior:auto}
       *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
     }
+
+
+    /* التحسينات النهائية بناءً على المراجعة */
+    :root{
+      --navy:#24224c;
+      --navy-deep:#24224c;
+    }
+    .no-break{white-space:nowrap}
+
+    /* رأس الموقع: شعار كامل وغير مقصوص */
+    .nav-wrap{height:74px}
+    .brand{overflow:visible;gap:11px}
+    .brand img{
+      width:54px;
+      height:34px;
+      object-fit:contain;
+      object-position:center;
+      flex:none;
+      margin-block:2px;
+    }
+    .brand-text strong{font-size:1rem}
+    .brand-text small{font-size:.64rem}
+
+    /* الصفحة الرئيسية: ارتفاع وعناصر أصغر وأكثر توازنًا */
+    .hero{
+      min-height:690px;
+      padding:98px 0 34px;
+      background:var(--navy);
+    }
+    .hero-grid{grid-template-columns:1.08fr .92fr;gap:46px}
+    .hero-logo{width:min(242px,58vw);margin-bottom:17px}
+    .hero-kicker{font-size:.9rem;margin-bottom:9px;gap:9px}
+    .hero-kicker::before{width:32px}
+    .hero h1{font-size:clamp(2.25rem,4.5vw,4.75rem);line-height:1.07;letter-spacing:-.035em}
+    .hero h1 span{font-size:.48em;line-height:1.35;margin-top:9px}
+    .hero p{max-width:600px;font-size:1rem;line-height:1.75;margin:16px 0 22px}
+    .hero-actions{gap:10px}
+    .btn{min-height:50px;padding:0 23px;font-size:.93rem}
+    .hero-visual{min-height:465px}
+    .hero-photo{height:465px;border-radius:32px 32px 145px 32px}
+    .hero-visual::before{right:-14px;bottom:-14px;border-radius:32px 32px 145px 32px}
+    .hero-stamp{right:-24px;bottom:30px;width:118px;height:118px;font-size:.82rem;border-width:7px}
+    .scroll-cue{display:none}
+
+    /* توحيد الصفحة الثانية مع كحلي الصفحة الرئيسية */
+    .manifesto{background:var(--navy)}
+    .manifesto-grid{min-height:330px;gap:62px}
+    .manifesto-logo img{width:230px}
+    .manifesto blockquote{font-size:clamp(1.85rem,3.3vw,3.25rem)}
+
+    /* قصة الريادة: صورة أفقية متناسقة وعنوان مضبوط */
+    .story-grid{grid-template-columns:1fr 1fr;gap:62px}
+    .story-visual{min-height:0;padding:0 0 38px 42px}
+    .story-image{
+      position:relative;
+      inset:auto;
+      width:100%;
+      aspect-ratio:16/9;
+      border-radius:26px;
+    }
+    .story-image img{object-fit:cover;object-position:center}
+    .story-card{left:0;bottom:0;width:250px;padding:22px;border-radius:18px}
+    .story-card strong{font-size:1.75rem;direction:ltr;unicode-bidi:isolate;text-align:right}
+    .story-copy .section-title{font-size:clamp(2.15rem,4.2vw,4rem);line-height:1.2;margin-bottom:30px}
+    .story-copy p{font-size:1rem;line-height:1.85;margin-bottom:15px}
+    .story-quote{margin-top:24px;font-size:1.08rem}
+
+    /* الخدمات السبع */
+    .services-grid{grid-template-columns:repeat(3,1fr);gap:18px}
+    .service-card{min-height:300px;padding:28px}
+    .service-card h3{font-size:1.46rem;margin:34px 0 11px}
+    .service-card p{font-size:.94rem;line-height:1.75}
+    .service-icon{width:52px;height:52px;border-radius:15px}
+    .service-card:last-child{grid-column:2}
+
+    /* صياغة وتصميم قسم القانون */
+    .promise-section{background:linear-gradient(180deg,var(--cream),#fff)}
+    .promise-card{
+      min-height:0;
+      padding:58px;
+      border-radius:30px;
+      background:var(--navy);
+      color:#fff;
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:52px;
+      align-items:center;
+      border:1px solid rgba(210,184,144,.35);
+      box-shadow:0 32px 80px rgba(36,34,76,.18);
+      position:relative;
+      overflow:hidden;
+    }
+    .promise-card::before{
+      content:"";
+      position:absolute;
+      inset:0 auto 0 0;
+      width:8px;
+      height:auto;
+      background:var(--beige);
+      transform:none;
+      border:0;
+    }
+    .promise-card::after{display:none}
+    .promise-content{max-width:640px}
+    .promise-eyebrow{display:flex;align-items:center;gap:10px;color:var(--beige);font-weight:800;font-size:.9rem;margin-bottom:18px}
+    .promise-eyebrow::before{content:"";width:34px;height:2px;background:var(--beige)}
+    .promise-content h2{font-size:clamp(2.25rem,4.5vw,4.3rem);line-height:1.18;letter-spacing:-.035em;color:#fff}
+    .promise-content h2 span{color:var(--beige)}
+    .promise-content p{font-size:1.05rem;line-height:1.85;color:rgba(255,255,255,.68);margin-top:20px}
+    .promise-link{display:inline-flex;align-items:center;gap:9px;margin-top:26px;color:var(--navy);background:var(--beige);padding:12px 20px;border-radius:10px;font-weight:900;transition:.25s ease}
+    .promise-link:hover{background:var(--beige-light);transform:translateY(-2px)}
+    .promise-system{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative}
+    .promise-core{grid-column:1/-1;padding:20px 22px;border:1px solid rgba(210,184,144,.55);background:rgba(210,184,144,.08)}
+    .promise-core small,.promise-rule small{display:block;color:rgba(255,255,255,.55);font-size:.78rem}
+    .promise-core strong{display:block;color:var(--beige);font-size:1.35rem;margin-top:3px}
+    .promise-rule{min-height:128px;padding:18px;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.035);display:flex;flex-direction:column;justify-content:space-between}
+    .promise-rule span{color:var(--beige);font-size:.76rem;letter-spacing:.12em}
+    .promise-rule strong{font-size:1.2rem}
+
+    /* التواصل: رقم صحيح واتجاه واضح، بلا زخرفة أو أيقونة دائرية */
+    .contact-panel{background:var(--navy);min-height:540px}
+    .contact-panel::after{display:none}
+    .contact-panel img{width:145px;margin-bottom:32px}
+    .contact-panel h2{font-size:2.35rem}
+    .phone-number{direction:ltr;unicode-bidi:isolate;display:inline-block;text-align:left;letter-spacing:.03em}
+    .field input[type="tel"]{direction:ltr;unicode-bidi:isolate;text-align:right}
+    .whatsapp-float{display:none!important}
+
+    @media (max-width:1050px){
+      .hero{min-height:auto;padding-top:108px}
+      .hero-grid{grid-template-columns:1fr;gap:34px}
+      .hero-copy{max-width:760px}
+      .hero-visual{min-height:420px}
+      .hero-photo{height:420px}
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+      .service-card:last-child{grid-column:1/-1;max-width:calc(50% - 9px);width:100%;justify-self:center}
+      .promise-card{grid-template-columns:1fr;gap:38px}
+    }
+    @media (max-width:820px){
+      .nav-wrap{height:70px}
+      .brand img{width:50px;height:32px}
+      .hero{padding:96px 0 48px}
+      .hero-logo{width:215px}
+      .hero-visual{min-height:360px}
+      .hero-photo{height:360px;border-radius:26px 26px 105px 26px}
+      .hero-stamp{right:-4px;bottom:18px;width:102px;height:102px;font-size:.75rem}
+      .manifesto-grid{min-height:0;padding:62px 0}
+      .story-grid{grid-template-columns:1fr}
+      .story-copy{order:-1}
+      .story-visual{padding:0 0 34px 28px}
+      .story-card{width:220px}
+      .services-grid{grid-template-columns:1fr}
+      .service-card:last-child{grid-column:auto;max-width:none}
+      .promise-card{padding:42px 28px}
+      .promise-system{gap:9px}
+    }
+    @media (max-width:520px){
+      .hero h1{font-size:2.35rem}
+      .hero h1 span{font-size:.46em}
+      .hero p{font-size:.94rem}
+      .hero-visual{min-height:290px}
+      .hero-photo{height:290px}
+      .story-copy .section-title{font-size:2.25rem}
+      .story-visual{padding-left:18px}
+      .story-card{width:205px;padding:17px}
+      .promise-card{padding:34px 22px}
+      .promise-content h2{font-size:2.2rem}
+      .promise-system{grid-template-columns:1fr}
+      .promise-core{grid-column:auto}
+      .promise-rule{min-height:100px}
+      .contact-panel{padding:30px 22px}
+    }
+
   </style>
 </head>
 <body>
@@ -384,11 +557,11 @@
       <div class="container story-grid">
         <div class="story-visual reveal">
           <div class="story-image"><img src="assets/about.webp" alt="مقر مؤسسة الريادة البصرية" loading="lazy"></div>
-          <div class="story-card"><strong>15+</strong><span>سنوات من الخبرة في التسويق وبناء العلامات</span></div>
+          <div class="story-card"><strong dir="ltr">15+</strong><span>سنوات من الخبرة في التسويق وبناء العلامات</span></div>
         </div>
         <div class="story-copy reveal">
           <div class="section-label">قصة الريادة البصرية</div>
-          <h2 class="section-title">ما قبل التسويق هو ما يصنع <span>الأثر</span></h2>
+          <h2 class="section-title">ما قبل التسويق هو ما <span class="no-break">يصنع الأثر</span></h2>
           <p>بعد عقدٍ من العمل في عالم التسويق، وبين عشرات الحملات الإعلانية والتجارب مع مختلف الشركات، لاحظنا فكرة تتكرر: إعلانات قوية وميزانيات ضخمة تمر سريعًا دون أن تترك أثرًا حقيقيًا في ذاكرة العميل.</p>
           <p>أدركنا أن المشكلة لم تكن في التسويق ذاته، بل في ما يسبقه؛ في الهوية البصرية التي تمنح العلامة حضورها وصوتها والانطباع الذي يبقى منها بعد كل إعلان.</p>
           <div class="story-quote">الهوية ليست مجرد تصميم؛ بل شعور يعلق في الذاكرة، وصورة تختصر قصة علامة كاملة.</div>
@@ -426,6 +599,21 @@
             <h3>تطوير الكوادر<br>التدريب والتمكين</h3>
             <p>تأهيل فريقك لإنتاج محتوى يطابق معايير الهوية، من خلال برامج تدريبية عملية ترفع جودة المخرجات اليومية.</p>
           </article>
+          <article class="service-card reveal">
+            <div class="service-top"><span class="service-number">05</span><span class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19V9l8-5 8 5v10"/><path d="M8 19v-6h8v6M12 4v9"/></svg></span></div>
+            <h3>استراتيجية العلامة<br>والتموضع التنافسي</h3>
+            <p>تحليل السوق والجمهور وتحديد شخصية العلامة ورسالتها وموقعها التنافسي قبل الانتقال إلى مرحلة التصميم.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-top"><span class="service-number">06</span><span class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 5h14v14H5z"/><path d="M9 2v6M15 2v6M9 16h6M12 13v6"/></svg></span></div>
+            <h3>تطبيقات الهوية<br>والتغليف والمطبوعات</h3>
+            <p>تطبيق النظام البصري على العبوات والمطبوعات والمواد التسويقية ونقاط التواصل لضمان تجربة موحدة للعلامة.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-top"><span class="service-number">07</span><span class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="6"/><path d="M16 16l4 4M8 11l2 2 4-4"/></svg></span></div>
+            <h3>الاستشارات<br>والتدقيق البصري</h3>
+            <p>مراجعة اتساق الهوية والمحتوى وتقديم توصيات عملية لمعالجة الثغرات ورفع جودة الحضور البصري.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -434,7 +622,7 @@
       <div class="container">
         <div class="reveal">
           <div class="section-label">أسس تميز علامتكم معنا</div>
-          <h2 class="section-title">الجمال عندنا ليس صدفة، بل <span>نظام محسوب</span></h2>
+          <h2 class="section-title">الجمال لدينا ليس صدفة، بل <span>نظام محسوب</span></h2>
           <p class="section-copy">نبني كل هوية على أربعة أسس تمنحها الثبات، التأثير، سهولة التشغيل، والقدرة على المنافسة.</p>
         </div>
         <div class="principles-grid reveal">
@@ -471,13 +659,21 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="promise-section section" aria-labelledby="promiseTitle">
       <div class="container">
         <div class="promise-card reveal">
           <div class="promise-content">
-            <img src="assets/mark-gold.png" alt="" aria-hidden="true">
-            <h2>هوية لا تعتمد على ذوق عابر، بل على قانون يحمي حضورها.</h2>
-            <p>لذلك لا نكتفي بتسليم ملفات تصميم؛ بل نبني منظومة قابلة للتطبيق والنمو، يفهمها فريقك ويشعر بها جمهورك.</p>
+            <div class="promise-eyebrow">قانون يحمي حضور العلامة</div>
+            <h2 id="promiseTitle">هوية لا تعتمد على <span>ذوق عابر</span></h2>
+            <p>لا نكتفي بتسليم ملفات تصميم؛ بل نبني منظومة واضحة قابلة للتطبيق والنمو، يفهمها فريقك ويشعر بها جمهورك في كل نقطة تواصل.</p>
+            <a class="promise-link" href="#contact">ابدأ بناء هويتك <span aria-hidden="true">←</span></a>
+          </div>
+          <div class="promise-system" aria-label="الأسس التي تحمي حضور الهوية">
+            <div class="promise-core"><small>نظام بصري</small><strong>راسخ وقابل للنمو</strong></div>
+            <div class="promise-rule"><span>01</span><strong>هندسة</strong><small>ثبات ودقة</small></div>
+            <div class="promise-rule"><span>02</span><strong>سيكولوجيا</strong><small>تأثير وارتباط</small></div>
+            <div class="promise-rule"><span>03</span><strong>إدارة</strong><small>اتساق وتشغيل</small></div>
+            <div class="promise-rule"><span>04</span><strong>تنافس</strong><small>تميّز وتموضع</small></div>
           </div>
         </div>
       </div>
@@ -505,9 +701,9 @@
           <h2>هل علامتك جاهزة لمرحلة أقوى؟</h2>
           <p>أرسل تفاصيل مشروعك وسنبدأ معك من النقطة الصحيحة لبناء حضور بصري يليق بطموحك.</p>
           <div class="contact-list">
-            <a class="contact-item" href="tel:+966506924390"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.8 19.8 0 013.09 5.18 2 2 0 015.08 3h3a2 2 0 012 1.72c.12.9.33 1.78.62 2.62a2 2 0 01-.45 2.11L9 10.7a16 16 0 006.3 6.3l1.25-1.25a2 2 0 012.11-.45c.84.29 1.72.5 2.62.62A2 2 0 0122 16.92z"/></svg><span>050 692 4390</span></a>
-            <a class="contact-item" href="mailto:AlriyadahV@gmail.com"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg><span>AlriyadahV@gmail.com</span></a>
-            <a class="contact-item" href="https://x.com/VisualLead1" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2H21l-6.02 6.88L22 22h-5.5l-4.31-5.64L7.25 22H4.49l6.42-7.34L4 2h5.64l3.9 5.15L18.244 2zm-.97 17.7h1.53L8.81 4.18H7.17L17.274 19.7z"/></svg><span>@VisualLead1</span></a>
+            <a class="contact-item" href="tel:+966506924390"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.8 19.8 0 013.09 5.18 2 2 0 015.08 3h3a2 2 0 012 1.72c.12.9.33 1.78.62 2.62a2 2 0 01-.45 2.11L9 10.7a16 16 0 006.3 6.3l1.25-1.25a2 2 0 012.11-.45c.84.29 1.72.5 2.62.62A2 2 0 0122 16.92z"/></svg><span class="phone-number" dir="ltr">050 692 4390</span></a>
+            <a class="contact-item" href="mailto:AlriyadahV@gmail.com"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg><span dir="ltr">AlriyadahV@gmail.com</span></a>
+            <a class="contact-item" href="https://x.com/VisualLead1" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2H21l-6.02 6.88L22 22h-5.5l-4.31-5.64L7.25 22H4.49l6.42-7.34L4 2h5.64l3.9 5.15L18.244 2zm-.97 17.7h1.53L8.81 4.18H7.17L17.274 19.7z"/></svg><span dir="ltr">@VisualLead1</span></a>
           </div>
         </aside>
         <div class="reveal">
@@ -517,7 +713,7 @@
           <form class="contact-form" id="contactForm">
             <div class="field"><label for="name">الاسم</label><input id="name" name="name" type="text" placeholder="اسمك الكريم" required></div>
             <div class="field"><label for="phone">رقم التواصل</label><input id="phone" name="phone" type="tel" placeholder="05xxxxxxxx" required></div>
-            <div class="field full"><label for="service">الخدمة المطلوبة</label><select id="service" name="service" required><option value="">اختر الخدمة</option><option>بناء هوية بصرية من الصفر</option><option>تطوير هوية قائمة</option><option>إدارة وتصميم المحتوى</option><option>تدريب وتمكين الفريق</option><option>استشارة بصرية</option></select></div>
+            <div class="field full"><label for="service">الخدمة المطلوبة</label><select id="service" name="service" required><option value="">اختر الخدمة</option><option>بناء هوية بصرية من الصفر</option><option>تطوير هوية قائمة</option><option>إدارة وتصميم المحتوى</option><option>تدريب وتمكين الفريق</option><option>استراتيجية العلامة والتموضع</option><option>تطبيقات الهوية والتغليف</option><option>استشارة وتدقيق بصري</option></select></div>
             <div class="field full"><label for="message">نبذة عن المشروع</label><textarea id="message" name="message" placeholder="اكتب نبذة مختصرة عن مشروعك واحتياجك"></textarea></div>
             <button class="form-submit" type="submit">إرسال الطلب عبر واتساب <span>←</span></button>
             <p class="form-note">بالضغط على الإرسال سيتم فتح واتساب برسالة مرتبة تحتوي على بيانات طلبك.</p>
@@ -537,9 +733,6 @@
     </div>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/966506924390" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
-    <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8A8.5 8.5 0 113.7 7.2 8.5 8.5 0 0121 11.5z"/><path d="M8.8 8.6c.4 2.7 1.9 4.2 4.6 4.6"/></svg>
-  </a>
   <button class="back-top" id="backTop" aria-label="العودة للأعلى"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
 
   <div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-label="عرض المشروع">
