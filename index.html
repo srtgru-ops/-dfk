@@ -501,6 +501,31 @@
       .contact-panel{padding:30px 22px}
     }
 
+  
+    /* تحديث الشعار: إظهار الرمز كاملًا دون قص */
+    .brand img{
+      width:74px;
+      height:auto;
+      max-height:56px;
+      object-fit:contain;
+      object-position:center;
+      overflow:visible;
+      flex:none;
+    }
+    .footer-brand img{
+      width:88px;
+      height:auto;
+      object-fit:contain;
+      overflow:visible;
+    }
+    @media (max-width:820px){
+      .brand img{
+        width:64px;
+        height:auto;
+        max-height:48px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -611,8 +636,8 @@
           </article>
           <article class="service-card reveal">
             <div class="service-top"><span class="service-number">07</span><span class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7"/><path d="M18 12h.01"/></svg></span></div>
-            <h3>تصميم<br>المطبوعات</h3>
-            <p>تصميم المطبوعات التعريفية والتسويقية باحتراف، مثل الملفات التعريفية والبروشورات والبطاقات واللوحات، بما ينسجم مع الهوية البصرية.</p>
+            <h3>مطبوعات</h3>
+            <p>إعداد المطبوعات التعريفية والتسويقية باحتراف، مثل الملفات التعريفية والبروشورات والبطاقات واللوحات، بما ينسجم مع الهوية البصرية.</p>
           </article>
         </div>
       </div>
@@ -713,7 +738,7 @@
           <form class="contact-form" id="contactForm">
             <div class="field"><label for="name">الاسم</label><input id="name" name="name" type="text" placeholder="اسمك الكريم" required></div>
             <div class="field"><label for="phone">رقم التواصل</label><input id="phone" name="phone" type="tel" placeholder="05xxxxxxxx" required></div>
-            <div class="field full"><label for="service">الخدمة المطلوبة</label><select id="service" name="service" required><option value="">اختر الخدمة</option><option>بناء هوية بصرية من الصفر</option><option>تطوير هوية قائمة</option><option>إدارة وتصميم المحتوى</option><option>تدريب وتمكين الفريق</option><option>تصميم وتطوير مواقع الويب</option><option>تحليل البيانات</option><option>المطبوعات</option></select></div>
+            <div class="field full"><label for="service">الخدمة المطلوبة</label><select id="service" name="service" required><option value="">اختر الخدمة</option><option>بناء هوية بصرية من الصفر</option><option>تطوير هوية قائمة</option><option>إدارة وتصميم المحتوى</option><option>تدريب وتمكين الفريق</option><option>تصميم وتطوير مواقع الويب</option><option>تحليل البيانات</option><option>مطبوعات</option></select></div>
             <div class="field full"><label for="message">نبذة عن المشروع</label><textarea id="message" name="message" placeholder="اكتب نبذة مختصرة عن مشروعك واحتياجك"></textarea></div>
             <button class="form-submit" type="submit">إرسال الطلب عبر واتساب <span>←</span></button>
             <p class="form-note">بالضغط على الإرسال سيتم فتح واتساب برسالة مرتبة تحتوي على بيانات طلبك.</p>
